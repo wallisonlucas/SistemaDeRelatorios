@@ -19,6 +19,7 @@ Aplicar o padrão **Bridge** para:
 ## 🧠 O Padrão Bridge
 O **Bridge** é um padrão estrutural que desacopla uma abstração de sua implementação, para que as duas possam variar independentemente. A ponte entre elas é feita por composição.
 
+## 🗂️ Estrutura do Projeto
 ```
 SistemaDeRelatorios/
   └── src/
