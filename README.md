@@ -20,14 +20,20 @@ Aplicar o padrão **Bridge** para:
 O **Bridge** é um padrão estrutural que desacopla uma abstração de sua implementação, para que as duas possam variar independentemente. A ponte entre elas é feita por composição.
 
 ```
-Exportador (interface)
-  ├── ExportadorPDF
-  └── ExportadorExcel
-
-Relatorio (abstração)
-  ├── exportador → referência ao Exportador (a "ponte")
-  ├── RelatorioFinanceiro   → abstração refinada
-  └── RelatorioVendas       → abstração refinada
+SistemaDeRelatorios/
+  └── src/
+        ├── Exportadores/
+        │     ├── Exportador          → interface (a "ponte")
+        │     ├── ExportadorExcel     → implementação concreta
+        │     └── ExportadorPDF       → implementação concreta
+        │
+        ├── Relatorios/
+        │     ├── ItemRelatorio       → classe de apoio
+        │     ├── Relatorio           → abstração
+        │     ├── RelatorioFinanceiro → abstração refinada
+        │     └── RelatorioVendas     → abstração refinada
+        │
+        └── Main
 ```
 
 A `Main` combina livremente qualquer tipo de relatório com qualquer exportador, sem necessidade de classes intermediárias para cada combinação.
